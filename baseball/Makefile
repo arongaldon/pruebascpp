@@ -5,10 +5,11 @@ CXXFLAGS = -w -std=c++17
 # File names
 SOURCES = $(wildcard *.cpp)
 OBJECTS = main.o BaseballPlayer.o Person.o 
- 
+EXEC = baseball
+
 # Main target
-baseball: $(OBJECTS)
-	$(CC) $(CC_FLAGS) -o baseball $(OBJECTS)
+$(EXEC): $(OBJECTS)
+	$(CC) $(CXXFLAGS) -o $(EXEC) $(OBJECTS)
  
 # To obtain object files
 Person.o : Person.h
