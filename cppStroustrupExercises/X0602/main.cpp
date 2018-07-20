@@ -6,31 +6,43 @@
 
 using namespace std;
 
-class Di {
-public:
-	Di(const string & texto) :
-		texto_{texto}
-	{
-		cout<<"Constructor que recibe "<<texto<<endl;
-	}
+short int segundos2Milis(const float s)
+{
+	short int ms;
 	
-	void operator()()
+	if (s * 1000 > numeric_limits<short int>::max())
 	{
-		for (int i = 0; i < 1000; ++i)
-		{
-			cout<<texto_<<endl;
-			this_thread::sleep_for(chrono::milliseconds(1000));
-		}
+		ms = numeric_limits<short int>::max();
 	}
-private:
-	const string & texto_;
-};
+	else
+	{
+		ms = s * 1000;
+	}
+	return ms;
+}
+
+void dime(const string & texto)
+{
+	short int s = segundos2Milis(1.0f);
+	
+	for (int i = 0; i < 5; ++i)
+	{
+		cout<<texto<<endl;
+		this_thread::sleep_for(chrono::milliseconds(segundos2Milis(1.0f)));
+	}
+}
 
 int main()
 {
-	thread t1 { Di{"Hola" } };
-	thread t2 { Di{"Mundo"} };
+	thread t1 (dime, "Hola" );
+	this_thread::sleep_for(chrono::milliseconds(segundos2Milis(0.5f)));
+	thread t2 (dime, "Mundo");
 	
-	this_thread::sleep_for(chrono::milliseconds(5000));
+	t1.join();
+	t2.join();
+		
+	cout<<"Adiós"<<endl;
+	
 	return EXIT_SUCCESS;
 }
+
