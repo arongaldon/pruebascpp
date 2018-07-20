@@ -7,6 +7,7 @@
 *.o
 *.obj
 baseball/baseball
+cppStroustrupExercises/X0509/integers
 
 # Precompiled Headers
 *.gch
