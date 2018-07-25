@@ -10,14 +10,16 @@ struct Nodo
     std::vector<Nodo * > hijos;
 };
 
-class NoEncontrado: public exception
+class NoEncontrado : public std::exception
 {
 public:
-  virtual const char * what() const throw()
-  {
-    return "Pues no se ha encontrado hello";
-  }
+    virtual const char * what() const throw()
+    {
+        return "Pues no se ha encontrado hello";
+    }
 };
+
+NoEncontrado noEncontrado;
 
 Nodo * buscaHello(Nodo * actual)
 {
@@ -29,16 +31,18 @@ Nodo * buscaHello(Nodo * actual)
     }
     else
     {
+        // Mirar en los hijos
         for (Nodo * hijo : actual->hijos)
         {
             Nodo * res = buscaHello(hijo);
             if (res != nullptr)
             {
                 encontrado = res;
+                break; // No hace falta seguir mirando hijos
             }
         }
-
     }
+    return encontrado;
 }
 
 /**
@@ -55,41 +59,46 @@ int main()
     Nodo h2h1;
     Nodo h3;
 
-    h1.val = "h1";
-    h2.val = "h2";
-    h3.val = "h3";
-    h1h1.val = "h1h1";
-    h1h2.val = "h1h2";
-    h2h1.val = "hello";
-
-    std::vector<Nodo *> hijosRaiz = {& h1, & h2, & h3};
-    raiz.hijos.insert(raiz.hijos.end(), hijosRaiz.begin(), hijosRaiz.end());
-    
-    std::vector<Nodo *> hijosH1 = {& h1h1, & h1h2};
-    h1.hijos.insert(h1.hijos.end(), hijosH1.begin(), hijosH1.end());
-    
-    std::vector<Nodo *> hijosH2 = {& h2h1};
-    h2.hijos.insert(h2.hijos.end(), hijosH2.begin(), hijosH2.end());
-
     try
     {    
+        h1.val = "h1";
+        h2.val = "h2";
+        h3.val = "h3";
+        h1h1.val = "h1h1";
+        h1h2.val = "h1h2";
+        h2h1.val
+//               = "hello"; // Ponemos el hello
+                 = "h2h1";  // Quitamos el hello
+
+        std::vector<Nodo *> hijosRaiz = {& h1, & h2, & h3};
+        raiz.hijos.insert(raiz.hijos.end(), hijosRaiz.begin(), hijosRaiz.end());
+        
+        std::vector<Nodo *> hijosH1 = {& h1h1, & h1h2};
+        h1.hijos.insert(h1.hijos.end(), hijosH1.begin(), hijosH1.end());
+        
+        std::vector<Nodo *> hijosH2 = {& h2h1};
+        h2.hijos.insert(h2.hijos.end(), hijosH2.begin(), hijosH2.end());
+
         // Buscar "hello"
         Nodo * encontrado = buscaHello(& raiz);
 
-        if (encontrado == nullptr)
+        if (encontrado != nullptr)
         {
-            NoEncontrado noEncontrado();
+            std::cout<<"Encontrado nodo supongo, ya que estamos aquí "<<std::endl;
+        }
+        else
+        {
             throw noEncontrado;
         }
-
     }
-    catch (NoEncontrado ex)
+    catch (NoEncontrado & ex)
     {
         std::cout<<"EXCEPTION!!!!!! "<<ex.what()<<std::endl;
     }
-
-
-    std::cout<<"Encontrado nodo supongo, ya que estamos aquí "<<std::endl;
+    catch (std::exception& e)
+    {
+    	std::cout<<"Otra excepcion"<<std::endl;
+    }
     
 	return EXIT_SUCCESS;
 }
