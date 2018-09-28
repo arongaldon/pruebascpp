@@ -6,8 +6,7 @@
 *.lo
 *.o
 *.obj
-baseball/baseball
-cppStroustrupExercises/X0509/integers
+*build
 
 # Precompiled Headers
 *.gch
@@ -17,10 +16,6 @@ cppStroustrupExercises/X0509/integers
 *.so
 *.dylib
 *.dll
-
-# Fortran module files
-*.mod
-*.smod
 
 # Compiled Static libraries
 *.lai
@@ -32,3 +27,10 @@ cppStroustrupExercises/X0509/integers
 *.exe
 *.out
 *.app
+
+# IDE settings
+*.vscode
+
+# Execution time temp and data
+cppStroustrupExercises/X0509/integers
+
