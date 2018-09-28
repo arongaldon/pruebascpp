@@ -1,0 +1,3 @@
+// the configured options and settings for baseball
+#define baseball_VERSION_MAJOR @baseball_VERSION_MAJOR@
+#define baseball_VERSION_MINOR @baseball_VERSION_MINOR@

@@ -1,14 +1,22 @@
 /* -*- c++ -*- */
 
-// Compila: g++ -c -std=c++11 main.cpp BaseballPlayer.cpp Person.cpp
-// Linka:   g++ -o baseball main.o BaseballPlayer.o Person.o
+// 1st completely manual
+// Compile: g++ -c -std=c++11 main.cpp BaseballPlayer.cpp Person.cpp
+// Link:    g++ -o baseball main.o BaseballPlayer.o Person.o
+
+// 2nd make: manual Makefile
+
+// 3rd cmake: CMakeLists.txt that generates the Makefile
 
 // Este ejemplo me sirve para probar y entender mejor qué ocurre con la herencia y los métodos virtuales.
 
 #include "BaseballPlayer.h"
+#include "baseballConfig.h"
 
 int main( int argc, char *argv[] )
 {
+    std::string version = std::to_string(baseball_VERSION_MAJOR) + "." + version += std::to_string(baseball_VERSION_MINOR);
+    std::cout << "baseball version " << version << std::endl;
     std::cout << std::endl << "Ini creación BaseballPlayer" << std::endl;
 
     // Crear un objeto de tipo BaseballPlayer de forma estática (memoria stack)
