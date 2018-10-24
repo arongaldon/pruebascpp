@@ -1,21 +1,26 @@
-# ARON my cmake! The first thing, is to create a build folder, and the execute cmake .. from there
-# Then we can run "make" to build de aplication, and "make gtest" to execute the Google Tests
+# Aron Galdon Gines
+# My CMake example project.
+# Steps:
+#  mkdir build
+#  cd build
+#  cmake ..
+#  make
+
 cmake_minimum_required (VERSION 3.5)
 
 project(baseball)
 
-# version of the baseball project
+# version M.m for my project
 set (baseball_VERSION_MAJOR 1)
 set (baseball_VERSION_MINOR 0)
 
 # c++ version to use
-set (CMAKE_CXX_STANDARD 14)
+set (CMAKE_CXX_STANDARD 17)
 
-# I show some info
-MESSAGE("PROJECT_SOURCE_DIR='${PROJECT_SOURCE_DIR}', PROJECT_BINARY_DIR='${PROJECT_BINARY_DIR}', CMAKE_CXX_STANDARD='${CMAKE_CXX_STANDARD}'")
+MESSAGE("PROJECT_SOURCE_DIR='${PROJECT_SOURCE_DIR}', PROJECT_BINARY_DIR='${PROJECT_BINARY_DIR}'")
+MESSAGE("CMAKE_CXX_STANDARD='${CMAKE_CXX_STANDARD}'")
 
-# configure a header file to pass some of the CMake settings
-# to the source code
+# configure a header file to pass some of the CMake settings to the source code
 configure_file (
     "${PROJECT_SOURCE_DIR}/baseballConfig.h.in"
     "${PROJECT_BINARY_DIR}/baseballConfig.h"
@@ -24,7 +29,7 @@ configure_file (
 
 ##############################
 # Get the Google Test library
-# ARON copied this from https://crascit.com/2015/07/25/cmake-gtest/
+# copied from https://crascit.com/2015/07/25/cmake-gtest/
 
 # add the binary tree to the search path for include files
 # so that we will find baseballConfig.h
@@ -60,7 +65,7 @@ add_executable(baseball main.cpp BaseballPlayer.cpp Person.cpp)
 
 ############################################################
 # GTests
-# ARON copied this from https://github.com/snikulov/google-test-examples
+# copied from https://github.com/snikulov/google-test-examples
 
 find_package(Threads REQUIRED)
 enable_testing()
@@ -77,3 +82,4 @@ file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/gtest/*.cpp)
      add_test(${_test_name} ${_test_name})
      set_tests_properties(${_test_name} PROPERTIES FOLDER gtest TIMEOUT 5)
  endforeach()
+ 

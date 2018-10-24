@@ -8,6 +8,8 @@
 
 // 3rd cmake: CMakeLists.txt that generates the Makefile
 
+// 4th gtest: designed some tests
+
 // Este ejemplo me sirve para probar y entender mejor qué ocurre con la herencia y los métodos virtuales.
 
 #include "BaseballPlayer.h"
