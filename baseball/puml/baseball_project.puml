@@ -1,0 +1,7 @@
+@startuml BaseballPlayer
+!include style.puml
+!include Person.puml
+!include BaseballPlayer.puml
+Person <|-- BaseballPlayer
+
+@enduml

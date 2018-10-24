@@ -1,0 +1,6 @@
+@startuml style
+skinparam shadowing false
+skinparam class {
+    BorderColor Black
+    BackgroundColor None
+}

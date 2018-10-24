@@ -1,0 +1,12 @@
+@startuml
+class BaseballPlayer {
+	+BaseballPlayer(const double battingAverage, const int homeRuns)
+	+~BaseballPlayer()
+	-battingAverage_ : double
+	-homeRuns_ : int
+	-{static} EDAD_MINIMA : static constexpr int
+	+queSoy() : std::string
+	+queSoyVirtual() : std::string
+}
+
+@enduml

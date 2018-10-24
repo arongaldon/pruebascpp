@@ -1,0 +1,14 @@
+@startuml Person
+!include style.puml
+class Person {
+	+Person(const std::string& name, const int age)
+	+~Person()
+	#age_ : int
+	+getName() : std::string
+	-name_ : std::string
+	+queSoy() : std::string
+	+queSoyVirtual() : std::string
+}
+
+
+@enduml
