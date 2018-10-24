@@ -1,4 +1,11 @@
 @startuml
+
+
+
+
+
+/' Objects '/
+
 class BaseballPlayer {
 	+BaseballPlayer(const double battingAverage, const int homeRuns)
 	+~BaseballPlayer()
@@ -8,5 +15,18 @@ class BaseballPlayer {
 	+queSoy() : std::string
 	+queSoyVirtual() : std::string
 }
+
+
+
+
+
+/' Inheritance relationships '/
+
+
+
+
+/' Aggregation relationships '/
+
+
 
 @enduml

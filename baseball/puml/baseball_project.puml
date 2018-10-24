@@ -1,7 +1,22 @@
-@startuml BaseballPlayer
+@startuml baseball_project
 !include style.puml
 !include Person.puml
 !include BaseballPlayer.puml
+
+/' Objects '/
+
+
+
+
+/' Inheritance relationships '/
+
 Person <|-- BaseballPlayer
+
+
+
+/' Aggregation relationships '/
+
+
+
 
 @enduml
