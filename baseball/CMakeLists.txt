@@ -15,9 +15,10 @@ set (baseball_VERSION_MAJOR 1)
 set (baseball_VERSION_MINOR 0)
 
 # c++ version to use
-set (CMAKE_CXX_STANDARD 17)
+set (CMAKE_CXX_STANDARD 14)
 
-MESSAGE("PROJECT_SOURCE_DIR='${PROJECT_SOURCE_DIR}', PROJECT_BINARY_DIR='${PROJECT_BINARY_DIR}'")
+MESSAGE("PROJECT_SOURCE_DIR='${PROJECT_SOURCE_DIR}'")
+MESSAGE("PROJECT_BINARY_DIR='${PROJECT_BINARY_DIR}'")
 MESSAGE("CMAKE_CXX_STANDARD='${CMAKE_CXX_STANDARD}'")
 
 # configure a header file to pass some of the CMake settings to the source code
@@ -25,7 +26,8 @@ configure_file (
     "${PROJECT_SOURCE_DIR}/baseballConfig.h.in"
     "${PROJECT_BINARY_DIR}/baseballConfig.h"
 )
-
+ 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 ##############################
 # Get the Google Test library
