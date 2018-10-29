@@ -34,3 +34,5 @@
 # Execution time temp and data
 cppStroustrupExercises/X0509/integers
 
+/.vs
+/baseball/CMakeSettings.json

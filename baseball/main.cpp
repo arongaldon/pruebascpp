@@ -15,8 +15,17 @@
 #include "BaseballPlayer.h"
 #include "baseballConfig.h"
 
+#if defined(_WIN32) || defined(_WIN64)
+#include <windows.h>
+#pragma execution_character_set("utf-8");
+#endif
+
 int main( int argc, char *argv[] )
 {
+#if defined(_WIN32) || defined(_WIN64)
+	SetConsoleOutputCP(65001);
+#endif
+
     std::string version = std::to_string(baseball_VERSION_MAJOR) + "." + version += std::to_string(baseball_VERSION_MINOR);
     std::cout << "baseball version " << version << std::endl;
     std::cout << std::endl << "Ini creación BaseballPlayer" << std::endl;
@@ -51,6 +60,10 @@ int main( int argc, char *argv[] )
         baseballPlayer.queSoyVirtual() << std::endl;
 
     std::cout << std::endl << "Fin main" << std::endl;
+
+#if defined(_WIN32) || defined(_WIN64)
+	system("pause");
+#endif
 
     return 0;
 }
