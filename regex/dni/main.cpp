@@ -9,11 +9,15 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
-    std::regex dniPattern(R"(\d{8}-?\w)");
+    std::regex dniPattern(R"(\d{8}\-?\w)");
 
     if (std::regex_match(argv[1], dniPattern))
     {
         std::cout<<"A match!"<<std::endl;
+    }
+    else
+    {
+        std::cout<<"No T_T"<<std::endl;
     }
 
     return EXIT_SUCCESS;
