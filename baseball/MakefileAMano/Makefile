@@ -1,3 +1,6 @@
+# This file was create by hand to compile the project in this folder.
+# As the project grows, using CMake will be recomended
+
 # Declaration of variables
 CC = g++
 CXXFLAGS = -w -std=c++17
