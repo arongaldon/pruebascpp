@@ -27,6 +27,7 @@
 *.exe
 *.out
 *.app
+baseball
 
 # IDE settings
 *.vscode
