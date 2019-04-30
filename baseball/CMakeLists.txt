@@ -12,7 +12,7 @@ project(baseball)
 
 # version M.m for my project
 set (baseball_VERSION_MAJOR 1)
-set (baseball_VERSION_MINOR 0)
+set (baseball_VERSION_MINOR 2)
 
 # c++ version to use
 set (CMAKE_CXX_STANDARD 14)
