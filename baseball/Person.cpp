@@ -11,24 +11,24 @@ Person::Person( const std::string & name, const int age )
     std::cout << " Constructor Person " << name_ << std::endl;
 }
 
-Person::~Person( )
+Person::~Person()
 {
     std::cout << " Destructor Person " << name_ << std::endl;
 }
 
 // Como name_ es privado, ni siquiera las clases derivadas pueden acceder
 // directamente
-const std::string Person::getName( )
+const std::string Person::getName()
 {
     return name_;
 }
 
-const std::string Person::queSoyVirtual( )
+const std::string Person::queSoyVirtual()
 {
     return "una persona";
 }
 
-const std::string Person::queSoy( )
+const std::string Person::queSoy()
 {
     return "una persona";
 }

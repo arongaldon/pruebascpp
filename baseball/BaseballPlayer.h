@@ -22,13 +22,13 @@ private:
 public:
     BaseballPlayer( const double battingAverage = 0.0,
                     const int homeRuns = 0 );
-    virtual ~BaseballPlayer( );
+    virtual ~BaseballPlayer();
 
     // override consigue que en todo caso se use este método y no el de la clase base
     // final evita que hijos de BaseballPlayer pudieran redefinir este método
-    virtual const std::string queSoyVirtual( ) override final;
+    virtual const std::string queSoyVirtual() override final;
 
-    const std::string queSoy( );
+    const std::string queSoy();
 };
 
 #endif

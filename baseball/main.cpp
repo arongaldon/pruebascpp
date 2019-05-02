@@ -1,16 +1,15 @@
 /* -*- c++ -*- */
 
-// 1st completely manual
+// The manual way:
 // Compile: g++ -c -std=c++11 main.cpp BaseballPlayer.cpp Person.cpp
 // Link:    g++ -o baseball main.o BaseballPlayer.o Person.o
 
-// 2nd make: manual Makefile
+// make with a hand written Makefile: MakefileAMano folder
 
-// 3rd cmake: CMakeLists.txt that generates the Makefile
+// cmake: CMakeLists.txt that generates the Makefile
 
-// 4th gtest: designed some tests
-
-// Este ejemplo me sirve para probar y entender mejor qué ocurre con la herencia y los métodos virtuales.
+// This project is for learning purposes
+// gtests and PlantUML diagrams are available
 
 #include "BaseballPlayer.h"
 #include "baseballConfig.h"
@@ -27,13 +26,10 @@ int main( int argc, char *argv[] )
 #endif
 
     std::string version = std::to_string(baseball_VERSION_MAJOR) + "." + version += std::to_string(baseball_VERSION_MINOR);
-    std::cout << "baseball version " << version << std::endl;
-    std::cout << std::endl << "Ini creación BaseballPlayer" << std::endl;
+    std::cout << "baseball version " << version << std::endl << std::endl;
 
     // Crear un objeto de tipo BaseballPlayer de forma estática (memoria stack)
     BaseballPlayer baseballPlayer;
-
-    std::cout << "Fin creación BaseballPlayer" << std::endl;
 
     // Mostrar nombre y qué es
     std::cout << std::endl << "- BaseballPlayer " <<
@@ -58,8 +54,6 @@ int main( int argc, char *argv[] )
         pPerson->getName() << ", ¿qué eres?" << std::endl << "- Soy " <<
         pPerson->queSoy() << " y con virtual soy " << 
         baseballPlayer.queSoyVirtual() << std::endl;
-
-    std::cout << std::endl << "Fin main" << std::endl;
 
 #if defined(_WIN32) || defined(_WIN64)
 	system("pause");

@@ -2,7 +2,7 @@
 
 #ifndef PERSON_H
 #define PERSON_H
-
+ 
 #include <iostream>
 
 /**
@@ -16,10 +16,10 @@ protected:
     int age_; ///< How many years old
 public:
     Person( const std::string & name = "Josep", const int age = 0 );
-    virtual ~Person( );
-    const std::string getName( );
-    virtual const std::string queSoyVirtual( );
-    const std::string queSoy( );
+    virtual ~Person();
+    const std::string getName();
+    virtual const std::string queSoyVirtual();
+    const std::string queSoy();
 };
 
 #endif
