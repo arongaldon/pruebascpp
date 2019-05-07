@@ -31,7 +31,7 @@ baseball
 
 # IDE settings
 *.vscode
-*.pro.user
+*.pro.user*
 
 # Execution time temp and data
 cppStroustrupExercises/X0509/integers
