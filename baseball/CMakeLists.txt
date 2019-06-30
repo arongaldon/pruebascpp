@@ -85,3 +85,8 @@ file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/gtest/*.cpp)
      set_tests_properties(${_test_name} PROPERTIES FOLDER gtest TIMEOUT 5)
  endforeach()
  
+############################################################
+# emit coverage data for gcovr:
+# gcovr -r .. -e ../gtest -e googletest -e googletest-download --html-details -o coverage.html
+
+set(CMAKE_CXX_FLAGS "-Wall -fprofile-arcs -ftest-coverage -g -O0 ")
