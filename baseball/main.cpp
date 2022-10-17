@@ -1,18 +1,17 @@
 /* -*- c++ -*- */
 
-// The manual way:
-// Compile: g++ -c -std=c++11 main.cpp BaseballPlayer.cpp Person.cpp
-// Link:    g++ -o baseball main.o BaseballPlayer.o Person.o
+// Manual build:
+// mkdir -p build && cd build
+// g++ -c -std=c++17 ../main.cpp ../BaseballPlayer.cpp ../Person.cpp
+// g++ -o baseball main.o BaseballPlayer.o Person.o
 
-// make with a hand written Makefile: MakefileAMano folder
-
-// cmake: CMakeLists.txt that generates the Makefile
+// Create a new CMake project
+// Add unit tests
 
 // This project is for learning purposes
 // gtests and PlantUML diagrams are available
 
 #include "BaseballPlayer.h"
-#include "baseballConfig.h"
 
 #if defined(_WIN32) || defined(_WIN64)
 #include <windows.h>
@@ -24,9 +23,6 @@ int main( int argc, char *argv[] )
 #if defined(_WIN32) || defined(_WIN64)
 	SetConsoleOutputCP(65001);
 #endif
-
-    std::string version = std::to_string(baseball_VERSION_MAJOR) + "." + version += std::to_string(baseball_VERSION_MINOR);
-    std::cout << "baseball version " << version << std::endl << std::endl;
 
     // Crear un objeto de tipo BaseballPlayer de forma estática (memoria stack)
     BaseballPlayer baseballPlayer;
