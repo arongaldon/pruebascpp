@@ -8,12 +8,11 @@ Person::Person( const std::string & name, const int age )
 {
     // Veremos que la clase base, la más general, es la primera en llamar al
     // constructor
-    std::cout << " Constructor Person " << name_ << std::endl;
+    std::cout << "Constructor Person " << name_ << std::endl;
 }
 
 Person::~Person()
 {
-    std::cout << " Destructor Person " << name_ << std::endl;
 }
 
 const int Person::getAge()

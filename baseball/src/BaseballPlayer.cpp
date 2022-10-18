@@ -15,8 +15,7 @@ BaseballPlayer::BaseballPlayer( const double battingAverage,
     // Notar que el nombre es private, y por tanto la derivada usa el método
     // público para acceder.
     // Como la edad es protected, la dervidada puede acceder directamente a ella.
-    std::cout << " Constructor BaseballPlayer " << getName() << " de "
-    << age_ << " años" << std::endl;
+    std::cout << "Constructor BaseballPlayer " << getName() << std::endl;
 }
 
 // Hay que declarar los destructores heredados como virtuales, ya que
@@ -24,7 +23,6 @@ BaseballPlayer::BaseballPlayer( const double battingAverage,
 // de tipo clase base que apunta a un objeto de la derivada
 BaseballPlayer::~BaseballPlayer()
 {
-    std::cout << " Destructor BaseballPlayer " << getName() << std::endl;
 }
 
 // Versión del método en la clase derivada:
