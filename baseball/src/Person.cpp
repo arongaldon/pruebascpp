@@ -2,12 +2,6 @@
 
 #include "Person.h"
 
-Person::Person()
-: name_("Josep"),
- age_(0)
-{
-}
-
 Person::Person( const std::string & name, const int age )
 : name_( name ),
   age_( age )

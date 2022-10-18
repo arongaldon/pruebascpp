@@ -1,7 +1,6 @@
 /* -*- c++ -*- */
 
-#ifndef BASEBALLPLAYER_H
-#define BASEBALLPLAYER_H
+#pragma once
 
 #include <iostream>
 #include "Person.h"
@@ -30,5 +29,3 @@ public:
 
     const std::string queSoy();
 };
-
-#endif

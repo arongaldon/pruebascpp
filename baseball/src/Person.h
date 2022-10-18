@@ -1,7 +1,6 @@
 /* -*- c++ -*- */
 
-#ifndef PERSON_H
-#define PERSON_H
+#pragma once
  
 #include <iostream>
 
@@ -15,7 +14,7 @@ private:
 protected:
     int age_; ///< How many years old
 public:
-    Person();
+    inline Person(): name_("Josep"), age_(0) {}
     Person( const std::string & name, const int age = 0 );
     virtual ~Person();
     const int getAge();
@@ -23,5 +22,3 @@ public:
     virtual const std::string queSoyVirtual();
     const std::string queSoy();
 };
-
-#endif
