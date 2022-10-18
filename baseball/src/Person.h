@@ -15,8 +15,10 @@ private:
 protected:
     int age_; ///< How many years old
 public:
-    Person( const std::string & name = "Josep", const int age = 0 );
+    Person();
+    Person( const std::string & name, const int age = 0 );
     virtual ~Person();
+    const int getAge();
     const std::string getName();
     virtual const std::string queSoyVirtual();
     const std::string queSoy();

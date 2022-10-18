@@ -2,6 +2,12 @@
 
 #include "Person.h"
 
+Person::Person()
+: name_("Josep"),
+ age_(0)
+{
+}
+
 Person::Person( const std::string & name, const int age )
 : name_( name ),
   age_( age )
@@ -14,6 +20,11 @@ Person::Person( const std::string & name, const int age )
 Person::~Person()
 {
     std::cout << " Destructor Person " << name_ << std::endl;
+}
+
+const int Person::getAge()
+{
+    return age_;
 }
 
 // Como name_ es privado, ni siquiera las clases derivadas pueden acceder
